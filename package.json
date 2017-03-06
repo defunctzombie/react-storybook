@@ -1,6 +1,6 @@
 {
   "name": "@defunctzombie/storybook",
-  "version": "2.35.3-dz.0",
+  "version": "2.35.3-dz.1",
   "description": "React Storybook: Isolate React Component Development with Hot Reloading.",
   "repository": {
     "type": "git",

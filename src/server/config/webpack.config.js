@@ -39,11 +39,13 @@ export default function () {
       new WatchMissingNodeModulesPlugin(nodeModulesPaths),
     ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.jsx?$/,
-          loader: require.resolve('babel-loader'),
-          query: babelLoaderConfig,
+          use: [{
+              loader: require.resolve('babel-loader'),
+              query: babelLoaderConfig,
+          }],
           include: includePaths,
           exclude: excludePaths,
         },
@@ -52,10 +54,7 @@ export default function () {
     resolve: {
       // Since we ship with json-loader always, it's better to move extensions to here
       // from the default config.
-      extensions: ['.js', '.json', '.jsx', ''],
-      // Add support to NODE_PATH. With this we could avoid relative path imports.
-      // Based on this CRA feature: https://github.com/facebookincubator/create-react-app/issues/253
-      fallback: nodePaths,
+      extensions: ['.js', '.json', '.jsx'],
       alias: {
         // This is to add addon support for NPM2
         '@kadira/storybook-addons': require.resolve('@kadira/storybook-addons'),

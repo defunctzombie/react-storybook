@@ -19,7 +19,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Add a default custom config which is similar to what React Create App does.
 module.exports = function (storybookBaseConfig) {
   var newConfig = (0, _extends3.default)({}, storybookBaseConfig);
-  newConfig.module.loaders = [].concat((0, _toConsumableArray3.default)(storybookBaseConfig.module.loaders), [{
+  newConfig.module.rules = [].concat((0, _toConsumableArray3.default)(storybookBaseConfig.module.rules), [{
     test: /\.css?$/,
     include: _utils.includePaths,
     loaders: [require.resolve('style-loader'), require.resolve('css-loader') + '?importLoaders=1', require.resolve('postcss-loader')]

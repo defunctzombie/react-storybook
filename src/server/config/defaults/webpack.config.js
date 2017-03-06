@@ -4,8 +4,8 @@ import { includePaths } from '../utils';
 // Add a default custom config which is similar to what React Create App does.
 module.exports = (storybookBaseConfig) => {
   const newConfig = { ...storybookBaseConfig };
-  newConfig.module.loaders = [
-    ...storybookBaseConfig.module.loaders,
+  newConfig.module.rules = [
+    ...storybookBaseConfig.module.rules,
     {
       test: /\.css?$/,
       include: includePaths,
